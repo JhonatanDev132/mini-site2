@@ -1,0 +1,281 @@
+/* Regras CSS para o site de Exemplo
+ O que você fizer aqui irá formatar TODAS as paginás
+ HTML conectadas com este arquivo*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* Seletor UNIVERSAL Alterando o Box Model para Todas as tags do HTML*/
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: black;
+   background-size: cover;
+   background-attachment: fixed;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* cc Seletor ID/IDENTIFICADO */
+
+#container {
+   background-color: rgba(240, 248, 255, 0.74);
+
+   /* Definaindo largura e margem automática, o resultado é a centralização da caixa */
+   width: 80%;
+   margin: auto;
+
+   box-shadow: rgba(0, 0, 0, 0.486) 0 0 20px, purple 0 -30px 100px;
+   padding: 10px;
+   border-radius: 5px;
+}
+
+/* Tornando as imagens flexíveis/responsivas */
+img {
+   max-width: 100%;
+}
+
+h1 {
+   text-shadow: rgb(209, 72, 72) 2px 3px 3px, rgb(163, 71, 48) 2px 5px 4px, rgb(146, 29, 29) 2px 9px 4px;
+   text-align: left;
+   font-family: 'Lobster', cursive;
+   color: white;
+
+   padding: 10px;
+   border-radius: 10px;
+
+}
+
+h2 {
+   background-image: url(../imagens/oriental-tiles.png);
+   color: white;
+   padding: 10px;
+
+   /* 
+   border-right-width: 20px
+   border-right-color: rgb(10, 73, 168
+   border-right-style: solid */
+
+   border-right: 25px rgb(10, 37, 112) solid;
+
+   border-radius: 9px;
+}
+
+/* SELETOR CLASSE */
+.centralizar {
+   text-align: center;
+}
+
+.sombra-texto {
+   text-shadow: black 2px 2px 3px;
+}
+
+.borda-arredondada {
+   border-radius: 8px;
+}
+
+.destaque {
+   background-color: rgba(0, 119, 255, 0.733);
+   padding: 1px 3px;
+   border: solid 2px rgb(1, 186, 248);
+}
+
+nav {
+   text-align: center;
+}
+
+/*Regra de estado inicial do link
+ Seletor DESCENDENTE */
+nav a {
+   color: white;
+   background-color: darkorange;
+   text-decoration: none;
+   font-weight: bold;
+   padding: 10px;
+   display: inline-block;
+   width: 33.33%;
+
+   /* Box Model CSS */
+   box-sizing: border-box;
+   transition: 0.5s;
+}
+
+nav a:hover,
+nav a:focus {
+   background-color: gray;
+   transform: translateY(20px);
+}
+
+figure {
+   margin: 0;
+   text-align: center;
+
+   position: relative;
+
+   max-width: 419px;
+   margin: 0 auto;
+}
+
+figcaption {
+   /* Devolver a área do elemento */
+   width: 100%;
+   font-weight: bold;
+   background-color: rgba(176, 224, 230, 0.849);
+   text-shadow: 0 0 1px;
+
+   /* Tornando o elemento livre para o posicionamento */
+
+   position: absolute;
+
+   /* Coordenadas */
+   bottom: 30px;
+   right: 0;
+
+   /* top: ;
+     left: ; */
+}
+
+figure img {
+   filter: grayscale(100%) blur(2px);
+   transition: 0.9s;
+   cursor: pointer;
+}
+
+figure img:hover {
+   filter: none;
+   transform: scale(0.9);
+
+}
+
+.flutuar {
+   float: left;
+   margin-right: 10px;
+}
+
+
+
+/* Seletor decendente 
+   Selecionar todas as imagens */
+.centralizar img {
+   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+ul {
+   font-family: impact;
+}
+
+ul li {
+   color: rgb(0, 153, 255);
+}
+
+ul li:first-child {
+   color: blue;
+}
+
+ul li:last-child {
+   color: purple;
+}
+
+ul li:nth-child(2) {
+   color: palegreen
+}
+
+ul li:nth-child(odd) {
+   background-color: rgba(0, 0, 0, 0.829);
+}
+
+ul li:nth-child(even) {
+   background-color: rgba(25, 42, 199, 0.829);
+}
+
+/* Etapa 1: regra da animação */
+@keyframes animaCores {
+   from {
+      background-color: rgb(153, 51, 82);
+      color: rgb(44, 184, 9);
+   }
+
+   to {
+      background-color: rgb(44, 184, 9);
+      color: rgb(153, 51, 82);
+   }
+}
+
+/* Etapa 2: aplicar a amimação
+em algum elemento */
+
+.subtitulo,h1 {
+   animation-name: animaCores;
+   animation-duration: 2s;
+
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+}
+
+#banner {
+   width: 450px;
+   margin: auto;
+   border: solid 2px;
+   position: relative;
+   overflow: hidden;
+   height: 150px;
+
+}
+
+
+@keyframes animaBanner {
+   from {
+      transform: translateX(-128px);
+   }
+
+   to {
+      transform: translateX(440px) rotate(360deg);
+   }
+
+}
+
+
+#banner img {
+   animation-name: animaBanner;
+   animation-duration: 2s;
+   position: relative;
+   animation-iteration-count: infinite;
+   animation-timing-function: ease-in;
+   animation-direction: alternate;
+
+}
+
+
+@keyframes animaText {
+   from {
+      transform: scale(1);
+   }
+
+   to {
+      transform: scale(1.5);
+   }
+}
+
+
+h5 {
+   will-change: transform;
+
+   background-size: cover;
+   height: 35px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   font-size: 24px;
+   font-weight: bold;
+   position: relative;
+   top: -100px;
+   background-color: rgba(0, 0, 139, 0.623);
+
+   animation-name: animaText;
+   animation-duration: 2s;
+
+   animation-iteration-count: infinite;
+   animation-timing-function: ease-in;
+   animation-direction: alternate;
+}
